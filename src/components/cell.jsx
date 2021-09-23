@@ -8,8 +8,16 @@ export default function Cell(props) {
     const [type, setType] = useState(props.cell.type)
 
     return(
-        <div className="cell">
-            {x}, {y}
-        </div>
+            solution ? 
+            <div className="cell">
+                <div className="cell-number">
+                    {number}
+                </div>
+                <div className="cell-letter">
+                    {solution}
+                </div>
+            </div> :
+            <div className="cell-black"> 
+            </div>
     )
 }

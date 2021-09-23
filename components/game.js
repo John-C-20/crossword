@@ -42,7 +42,7 @@ export default function Game() {
 
     return React.createElement(
         "div",
-        null,
+        { className: "game-container" },
         React.createElement(
             "div",
             { className: "grid" },

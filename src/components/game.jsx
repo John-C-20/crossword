@@ -23,10 +23,12 @@ export default function Game() {
     useEffect(() => getData(), []);
 
     return(
-        <div>
+        <div className="game-container">
             <div className="grid">
                 {data.cells.map(cell => <Cell cell={cell}/>)}
             </div>
+
+            
         </div>
     )
 

@@ -28,11 +28,18 @@ export default function Cell(props) {
         type = _useState10[0],
         setType = _useState10[1];
 
-    return React.createElement(
+    return solution ? React.createElement(
         "div",
         { className: "cell" },
-        x,
-        ", ",
-        y
-    );
+        React.createElement(
+            "div",
+            { className: "cell-number" },
+            number
+        ),
+        React.createElement(
+            "div",
+            { className: "cell-letter" },
+            solution
+        )
+    ) : React.createElement("div", { className: "cell-black" });
 }

@@ -50,3 +50,20 @@
   color: black;
   text-align: left;
 }
+
+.cell-number {
+  position: absolute;
+  margin-left: 2px;
+}
+
+.cell-letter {
+  text-align: center;
+  transform: translateY(100%);
+  font-weight: 700;
+}
+
+.cell-black { 
+  background: black;
+  height: 100%;
+  width:100%;
+}
