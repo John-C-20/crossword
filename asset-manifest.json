@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/http//john-c-20.github.io/crossword/static/css/main.400a64c7.chunk.css",
-    "main.js": "/http//john-c-20.github.io/crossword/static/js/main.abfe88f7.chunk.js",
-    "main.js.map": "/http//john-c-20.github.io/crossword/static/js/main.abfe88f7.chunk.js.map",
-    "runtime-main.js": "/http//john-c-20.github.io/crossword/static/js/runtime-main.85541113.js",
-    "runtime-main.js.map": "/http//john-c-20.github.io/crossword/static/js/runtime-main.85541113.js.map",
-    "static/js/2.c0050fec.chunk.js": "/http//john-c-20.github.io/crossword/static/js/2.c0050fec.chunk.js",
-    "static/js/2.c0050fec.chunk.js.map": "/http//john-c-20.github.io/crossword/static/js/2.c0050fec.chunk.js.map",
-    "static/js/3.eebaf98d.chunk.js": "/http//john-c-20.github.io/crossword/static/js/3.eebaf98d.chunk.js",
-    "static/js/3.eebaf98d.chunk.js.map": "/http//john-c-20.github.io/crossword/static/js/3.eebaf98d.chunk.js.map",
-    "index.html": "/http//john-c-20.github.io/crossword/index.html",
-    "static/css/main.400a64c7.chunk.css.map": "/http//john-c-20.github.io/crossword/static/css/main.400a64c7.chunk.css.map",
-    "static/js/2.c0050fec.chunk.js.LICENSE.txt": "/http//john-c-20.github.io/crossword/static/js/2.c0050fec.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/http//john-c-20.github.io/crossword/static/media/logo.6ce24c58.svg"
+    "main.css": "/crossword/static/css/main.400a64c7.chunk.css",
+    "main.js": "/crossword/static/js/main.abfe88f7.chunk.js",
+    "main.js.map": "/crossword/static/js/main.abfe88f7.chunk.js.map",
+    "runtime-main.js": "/crossword/static/js/runtime-main.f432bdb6.js",
+    "runtime-main.js.map": "/crossword/static/js/runtime-main.f432bdb6.js.map",
+    "static/js/2.c0050fec.chunk.js": "/crossword/static/js/2.c0050fec.chunk.js",
+    "static/js/2.c0050fec.chunk.js.map": "/crossword/static/js/2.c0050fec.chunk.js.map",
+    "static/js/3.eebaf98d.chunk.js": "/crossword/static/js/3.eebaf98d.chunk.js",
+    "static/js/3.eebaf98d.chunk.js.map": "/crossword/static/js/3.eebaf98d.chunk.js.map",
+    "index.html": "/crossword/index.html",
+    "static/css/main.400a64c7.chunk.css.map": "/crossword/static/css/main.400a64c7.chunk.css.map",
+    "static/js/2.c0050fec.chunk.js.LICENSE.txt": "/crossword/static/js/2.c0050fec.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/crossword/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.85541113.js",
+    "static/js/runtime-main.f432bdb6.js",
     "static/js/2.c0050fec.chunk.js",
     "static/css/main.400a64c7.chunk.css",
     "static/js/main.abfe88f7.chunk.js"
