@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 export default function Cell(props) {
     const {x,y,solution, number, type, solved} = props.cell
-    const {cellToClue, cellToWords, fillCell, checkCells, toggleSolved} = props.functions
+    const {cellToClue, cellToWords, fillCell, checkCells, toggleSolved, toggleHighlightClue} = props.functions
     const [text, setText] = useState("")
 
     const handleChange = (e) => {
@@ -15,7 +15,6 @@ export default function Cell(props) {
             const check2 = checkCells(words[1])
             if (check1) toggleSolved(words[0], true,x,y);
             if (check2) toggleSolved(words[1], true,x,y);
-
             if (!(check1 || check2)) {
                 toggleSolved(words[0], false, x,y)
                 toggleSolved(words[1], false, x,y)
@@ -23,15 +22,32 @@ export default function Cell(props) {
          } else return;
     };
 
+    const handleFocus = e => {
+        toggleHighlightClue(number, true)
+        console.log("focus")
+    }
+
+    // const handleClick = e => {
+    //     toggleHighlightClue(number, true)
+    // }
+
+    const handleBlur = e => {
+        toggleHighlightClue(number, false)
+        console.log("blur")
+    }
+    
     return(
             solution ? 
             <div className={`cell ${solved ? "solved" : false}`}id={`${x},${y}`}>
                 <div className="cell-number">
-                    {number} {solved}
+                    {number} 
                 </div>
-                <input className="cell-letter" onChange={handleChange} value={text}>
+                <input className="cell-letter" 
+                onFocusCapture={handleFocus}
+                onBlur={handleBlur} 
+                onChange={handleChange} value={text}>
                 </input>
             </div> :
             <div className="cell-black"></div>
     )
-}
+}    

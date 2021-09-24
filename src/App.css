@@ -10,19 +10,19 @@ body, .App, #root, .App-header{
 
 .game-container {
   display: grid;
-  grid-template-columns: 10% 2fr 1fr 10%;
-  /* transform: translateY(-50%); */
+  grid-template-columns: auto auto;
+  gap: 5%;
+  padding: 0 20px;
   position:relative;
-  /* top:50%; */
 }
 
 .grid {
-    display:grid;
-    grid-template-columns: repeat(15, 3rem);
-    grid-template-rows: repeat(15, 3rem);
-    grid-column-start: 2;
-    justify-content: center;
-    margin: 14.94px 0;
+  display:grid;
+  grid-template-columns: repeat(15, 3rem);
+  grid-template-rows: repeat(15, 3rem);
+  grid-column-start: 1;
+  justify-content: center;
+  margin: 14.94px 0;
 }
 
 .cell {
@@ -43,8 +43,6 @@ body, .App, #root, .App-header{
 }
 
 .cell-letter {
-  /* text-align: center; */
-  /* transform: translateY(100%); */
   font-weight: 700;
   height: 46px; 
   width: 46px;
@@ -64,19 +62,29 @@ body, .App, #root, .App-header{
 .clues-container {
   color: black;
   place-self: center;
+  grid-column-start: 2;
   display: flex;
   gap: 40px;
+  min-width: fit-content;
 }
 
+.down, .across {
+  min-width: fit-content;
+}
 .clues-container h2 { 
   text-align: left;
   font-size: 18px;
+  min-width: 0;
 }
 
 .clue {
   display:grid;
   grid-template-columns: 1fr 3fr;
   grid-auto-rows: 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 1px;
+  min-width: fit-content;
 }
 
 .clue .number {
@@ -88,4 +96,16 @@ body, .App, #root, .App-header{
   font-size: 12px;
   text-align: left;
   vertical-align:middle;
+  line-height:16px;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.highlighted {
+  background-color: yellow;
+}
+
+input:focus {
+  background-color: lightblue;
+  border:none;
 }

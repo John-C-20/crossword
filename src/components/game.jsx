@@ -8,7 +8,6 @@ export default function Game() {
     const [cells, setCells] = useState([])
     const [clues, setClues] = useState([])
     const [words, setWords] = useState([])
-    const [count, setCount] = useState(0)
 
     const getData = () => {
         fetch('crossword-puzzle.json', {
@@ -37,8 +36,8 @@ export default function Game() {
     useEffect(() => getData(), []);
 
     const cellToClue = (number) => { 
-        const clue = clues.find(clue => clue.number === number)
-        return clue;
+        const clueArr = clues.filter(clue => clue.number === number)
+        return clueArr;
     }
 
     const clueToWord = (wordId) => {
@@ -46,6 +45,7 @@ export default function Game() {
         return word; 
     }
 
+    // finds the word based on x,y of cell
     const cellToWords = (x,y) => {
         return cells[convertXYtoIdx(x,y)].word
     }
@@ -53,6 +53,7 @@ export default function Game() {
     //converts x,y grid coordinates to an indice in cells array
     const convertXYtoIdx = (x,y) => 15*(y-1)+(x-1);
     
+    //converts the coordinates of a word into an array of indices
     const convertWordToCells = word => {
         let x = word.x.split("-").map(num => Number(num))
         let y = word.y.split("-").map(num => Number(num))
@@ -75,6 +76,8 @@ export default function Game() {
         return idx;
     }
     
+
+    // sets the "value" of a cell for use in checkCells(word)
     const fillCell = (x,y, value) => {
         cells[convertXYtoIdx(x,y)].value = value
     }
@@ -94,29 +97,31 @@ export default function Game() {
         };
     }
 
-    const toggleSolved = (word, solved,x,y) => {
+    // highlights or unhighlights tiles depending on if word is solved
+    const toggleSolved = (word, solved, x, y) => {
         let newCells = [...cells]
         const idx = convertXYtoIdx(x,y)
         word.cells.forEach(i => {
             if (newCells[i].solved) {
-                if (i == idx) {
-                    newCells[i].solved = solved;
-                } else {
-                    if(!( checkCells(newCells[i].word[0]) || checkCells(newCells[i].word[1]))) {
-                        newCells[i].solved = solved
-                    }
-                }
-            } else {
-                newCells[i].solved = solved;
-            }
+                const check1 = checkCells(newCells[i].word[0])
+                const check2 = checkCells(newCells[i].word[1])
+                if (!( check1 || check2)) newCells[i].solved = solved;
+            } else newCells[i].solved = solved;
         })
         setCells(newCells)
+    }
+
+    // highlight clue when clicking a numbered cell
+    const toggleHighlightClue = (number, onOff) => {
+        const clueArr = cellToClue(number) 
+        clueArr.forEach(clue => clue.highlighted = onOff)
+        setClues([...clues])
     }
 
     return(
         <div className="game-container">
             <div className="grid">
-                {cells.map((cell, i) => <Cell key={`${i}`} functions={{cellToClue, cellToWords, fillCell, checkCells, toggleSolved}} cell={cell}/>)}
+                {cells.map((cell, i) => <Cell key={`${i}`} functions={{cellToClue, cellToWords, fillCell, checkCells, toggleSolved, toggleHighlightClue}} cell={cell}/>)}
             </div>
 
             {clues.length > 0 ?
