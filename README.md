@@ -1,3 +1,5 @@
+# Crossword 
+
 <p>I received this project as a take-home assignment and decided to use it as an opportunity to practice and learn new technologies. </p>
 
 Unlike my previous React applications which were built using class components, this was built primarily using functional components and React Hooks. 
