@@ -34,12 +34,12 @@ body, .App, #root, .App-header{
 }
 
 .solved {
-  background:green;
+  background:rgb(25, 247, 25);
 }
 .cell-number {
   position: absolute;
   margin-left: 2px;
-  background:inherit;
+  background: transparent;
 }
 
 .cell-letter {
@@ -105,7 +105,7 @@ body, .App, #root, .App-header{
   background-color: yellow;
 }
 
-input:focus {
-  background-color: lightblue;
+input:focus, div.cell:focus {
+  background-color: rgb(173, 216, 230, 0.3);
   border:none;
 }

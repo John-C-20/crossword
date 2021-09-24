@@ -24,16 +24,10 @@ export default function Cell(props) {
 
     const handleFocus = e => {
         toggleHighlightClue(number, true)
-        console.log("focus")
     }
-
-    // const handleClick = e => {
-    //     toggleHighlightClue(number, true)
-    // }
 
     const handleBlur = e => {
         toggleHighlightClue(number, false)
-        console.log("blur")
     }
     
     return(
