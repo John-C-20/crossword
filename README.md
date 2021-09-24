@@ -20,3 +20,6 @@ I also parsed a local JSON for the first time, usually I only work with JSON tha
 
 Another really cool thing I learned how to do with this project was deploying a full React app to github pages using the [Github Pages](https://www.npmjs.com/package/gh-pages) dev dependency. This [guide](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f) was super helpful. 
 
+At the end of the day, I had a ton of fun brushing up on old skills, learning new ones, and building a game from scratch. 
+
+### [Check it out!](https://john-c-20.github.io/crossword)
