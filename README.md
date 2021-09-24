@@ -24,7 +24,7 @@ class CoolComponent extends React.Component {
  
 <p>I also parsed a local JSON for the first time, usually I only work with JSON that had been retrieved from an external API.</p>
 
-<p>Another really cool thing I learned how to do with this project was deploying a full React app to github pages using the [Github Pages](https://www.npmjs.com/package/gh-pages) dev dependency. This [guide](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f) was super helpful.</p> 
+Another really cool thing I learned how to do with this project was deploying a full React app to github pages using the [Github Pages](https://www.npmjs.com/package/gh-pages) dev dependency. This [guide](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f) was super helpful.
 
 <p>After a little more than a day of struggling, I was able to finish the MVPs and produce a deliverable that followed the wireframe provided. Ultimately, I had a ton of fun brushing up on old skills, learning new ones, and building a game from scratch.</p>
 
