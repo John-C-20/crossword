@@ -89,23 +89,32 @@ export default function Game() {
             str.push(cells[i].value)
         })
         
-        console.log(str)
         if (str.join("") == word.solution) {
             console.log("correct!", word.solution)
-            toggleSolved(word, true)
             return true;
         } else {
-            toggleSolved(word, false)
+            console.log("not correct yet, currently: ", str.join(""))
             return false
         };
     }
 
-    const toggleSolved = (word, solved) => {
+    const toggleSolved = (word, solved,x,y) => {
         let newCells = [...cells]
+        const idx = convertXYtoIdx(x,y)
         console.log("word.cells", word.cells)
         word.cells.forEach(i => {
-            console.log(`i:${i}, newCells[i]:${newCells[i]}`)
-            newCells[i].solved = solved 
+            // console.log(`i:${i}, newCells[i]:${newCells[i]}`)
+            if (newCells[i].solved) {
+                if (i == idx) {
+                    newCells[i].solved = solved;
+                } else {
+                    if(!( checkCells(newCells[i].word[0]) || checkCells(newCells[i].word[1]))) {
+                        newCells[i].solved = solved
+                    }
+                }
+            } else {
+                newCells[i].solved = solved;
+            }
         })
         setCells(newCells)
     }
@@ -113,7 +122,7 @@ export default function Game() {
     return(
         <div className="game-container">
             <div className="grid">
-                {cells.map((cell, i) => <Cell key={`${i}`} functions={{cellToClue, cellToWords, fillCell, checkCells}} cell={cell}/>)}
+                {cells.map((cell, i) => <Cell key={`${i}`} functions={{cellToClue, cellToWords, fillCell, checkCells, toggleSolved}} cell={cell}/>)}
             </div>
 
             {clues.length > 0 ?

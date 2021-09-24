@@ -151,10 +151,8 @@ export default function Game() {
         console.log(str);
         if (str.join("") == word.solution) {
             console.log("correct!", word.solution);
-            toggleSolved(word, true);
             return true;
         } else {
-            toggleSolved(word, false);
             return false;
         };
     };
@@ -176,7 +174,7 @@ export default function Game() {
             "div",
             { className: "grid" },
             cells.map(function (cell, i) {
-                return React.createElement(Cell, { key: "" + i, functions: { cellToClue: cellToClue, cellToWords: cellToWords, fillCell: fillCell, checkCells: checkCells }, cell: cell });
+                return React.createElement(Cell, { key: "" + i, functions: { cellToClue: cellToClue, cellToWords: cellToWords, fillCell: fillCell, checkCells: checkCells, toggleSolved: toggleSolved }, cell: cell });
             })
         ),
         clues.length > 0 ? React.createElement(Clues, { key: clues.length, functions: { clueToWord: clueToWord }, clues: clues }) : null

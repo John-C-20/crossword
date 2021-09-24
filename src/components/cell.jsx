@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 
 export default function Cell(props) {
-    const {x,y,solution, number, type,solved} = props.cell
-    const {cellToClue, cellToWords, fillCell, checkCells} = props.functions
+    const {x,y,solution, number, type, solved} = props.cell
+    const {cellToClue, cellToWords, fillCell, checkCells, toggleSolved} = props.functions
     const [text, setText] = useState("")
 
     const handleChange = (e) => {
@@ -11,8 +11,15 @@ export default function Cell(props) {
             setText(value)
             fillCell(x,y,value) 
             const words = cellToWords(x,y)
-            checkCells(words[0])
-            checkCells(words[1])
+            const check1 = checkCells(words[0])
+            const check2 = checkCells(words[1])
+            if (check1) toggleSolved(words[0], true,x,y);
+            if (check2) toggleSolved(words[1], true,x,y);
+
+            if (!(check1 || check2)) {
+                toggleSolved(words[0], false, x,y)
+                toggleSolved(words[1], false, x,y)
+            };
          } else return;
     };
 

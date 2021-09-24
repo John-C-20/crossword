@@ -14,7 +14,8 @@ export default function Cell(props) {
         cellToClue = _props$functions.cellToClue,
         cellToWords = _props$functions.cellToWords,
         fillCell = _props$functions.fillCell,
-        checkCells = _props$functions.checkCells;
+        checkCells = _props$functions.checkCells,
+        toggleSolved = _props$functions.toggleSolved;
 
     var _useState = useState(""),
         _useState2 = _slicedToArray(_useState, 2),
@@ -27,8 +28,12 @@ export default function Cell(props) {
             setText(value);
             fillCell(x, y, value);
             var words = cellToWords(x, y);
-            checkCells(words[0]);
-            checkCells(words[1]);
+            if (checkCells(words[0])) toggleSolved(words[0], true);
+            if (checkCells(words[1])) toggleSolved(words[1], true);
+            // if (!(checkCells(words[0])) || checkCells(words[1])) {
+            //     toggleSolved(words[0], false)
+            //     toggleSolved(words[1], false)
+            // };
         } else return;
     };
 
