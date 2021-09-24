@@ -26,6 +26,6 @@ class CoolComponent extends React.Component {
 
 <p>Another really cool thing I learned how to do with this project was deploying a full React app to github pages using the [Github Pages](https://www.npmjs.com/package/gh-pages) dev dependency. This [guide](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f) was super helpful.</p> 
 
-<p>After a little more than a day of struggling, I was able to finish the MVPs and produce a deliverable that followed the wireframe provided. Ultimately, I had a ton of fun brushing up on old skills, learning new ones, and building a game from scratch.>/p>
+<p>After a little more than a day of struggling, I was able to finish the MVPs and produce a deliverable that followed the wireframe provided. Ultimately, I had a ton of fun brushing up on old skills, learning new ones, and building a game from scratch.</p>
 
 ### [Check it out!](https://john-c-20.github.io/crossword)
