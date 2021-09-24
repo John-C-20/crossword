@@ -3,43 +3,44 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 import React, { useState, useEffect } from "react";
 
 export default function Cell(props) {
-    var _useState = useState(props.cell.x),
+    var _props$cell = props.cell,
+        x = _props$cell.x,
+        y = _props$cell.y,
+        solution = _props$cell.solution,
+        number = _props$cell.number,
+        type = _props$cell.type;
+
+    var i = props.i;
+    var _props$functions = props.functions,
+        cellToClue = _props$functions.cellToClue,
+        cellToWords = _props$functions.cellToWords,
+        fillCell = _props$functions.fillCell,
+        checkCells = _props$functions.checkCells;
+
+    var _useState = useState(""),
         _useState2 = _slicedToArray(_useState, 2),
-        x = _useState2[0],
-        setX = _useState2[1];
+        text = _useState2[0],
+        setText = _useState2[1];
 
-    var _useState3 = useState(props.cell.y),
-        _useState4 = _slicedToArray(_useState3, 2),
-        y = _useState4[0],
-        setY = _useState4[1];
-
-    var _useState5 = useState(props.cell.solution),
-        _useState6 = _slicedToArray(_useState5, 2),
-        solution = _useState6[0],
-        setSolution = _useState6[1];
-
-    var _useState7 = useState(props.cell.number),
-        _useState8 = _slicedToArray(_useState7, 2),
-        number = _useState8[0],
-        setNumber = _useState8[1];
-
-    var _useState9 = useState(props.cell.type),
-        _useState10 = _slicedToArray(_useState9, 2),
-        type = _useState10[0],
-        setType = _useState10[1];
+    var handleChange = function handleChange(e) {
+        var value = e.currentTarget.value.toUpperCase();
+        if (value.length <= 1) {
+            setText(value);
+            fillCell(x, y, value);
+            var words = cellToWords(x, y);
+            checkCells(words[0]);
+            checkCells(words[1]);
+        } else return;
+    };
 
     return solution ? React.createElement(
         "div",
-        { className: "cell" },
+        { className: "cell", id: x + "," + y + " " + i },
         React.createElement(
             "div",
             { className: "cell-number" },
             number
         ),
-        React.createElement(
-            "div",
-            { className: "cell-letter" },
-            solution
-        )
+        React.createElement("input", { className: "cell-letter", onChange: handleChange, value: text })
     ) : React.createElement("div", { className: "cell-black" });
 }
