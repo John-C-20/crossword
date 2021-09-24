@@ -2,10 +2,13 @@ I received this project as a take-home assignment and decided to use it as an op
 
 Unlike my previous React applications which were built using class components, this was built primarily using functional components and React Hooks. At first there was a little bit of a learning curve trying to figure out how to do things like ```componentDidMount()``` using ```useEffect()```. After adjusting, I quickly began to appreciate how much time I was able to save avoiding boilerplate code like 
 ```JavaScript
-export default class CoolComponent extends React.Component {
+class CoolComponent extends React.Component {
       constructor(props) {
-      super(props)
+           super(props)
       }
   }
  ```
+I also parsed a local JSON for the first time, usually I only work with JSON that had been retrieved from an external API.
+
+Another really cool thing I learned how to do with this project was deploying a full React app to github pages using the [Github Pages](https://www.npmjs.com/package/gh-pages) dev dependency. This [guide](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f) was super helpful. 
 
