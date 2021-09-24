@@ -38,13 +38,11 @@ export default function Game() {
 
     const cellToClue = (number) => { 
         const clue = clues.find(clue => clue.number === number)
-        // console.log("cellToClue", clue)
         return clue;
     }
 
     const clueToWord = (wordId) => {
         const word = words.find(obj => obj.id == wordId)
-        // console.log("clueToWord", word)
         return word; 
     }
 
@@ -90,10 +88,8 @@ export default function Game() {
         })
         
         if (str.join("") == word.solution) {
-            console.log("correct!", word.solution)
             return true;
         } else {
-            console.log("not correct yet, currently: ", str.join(""))
             return false
         };
     }
@@ -101,9 +97,7 @@ export default function Game() {
     const toggleSolved = (word, solved,x,y) => {
         let newCells = [...cells]
         const idx = convertXYtoIdx(x,y)
-        console.log("word.cells", word.cells)
         word.cells.forEach(i => {
-            // console.log(`i:${i}, newCells[i]:${newCells[i]}`)
             if (newCells[i].solved) {
                 if (i == idx) {
                     newCells[i].solved = solved;
