@@ -8,6 +8,7 @@ export default function Game() {
     const [cells, setCells] = useState([])
     const [clues, setClues] = useState([])
     const [words, setWords] = useState([])
+    const [count, setCount] = useState(0)
 
     const getData = () => {
         fetch('crossword-puzzle.json', {
@@ -100,17 +101,19 @@ export default function Game() {
     }
 
     const toggleSolved = (word, solved) => {
+        let newCells = [...cells]
+        console.log("word.cells", word.cells)
         word.cells.forEach(i => {
-            let newCells = cells
+            console.log(`i:${i}, newCells[i]:${newCells[i]}`)
             newCells[i].solved = solved 
-            setCells(newCells)
         })
+        setCells(newCells)
     }
 
     return(
         <div className="game-container">
             <div className="grid">
-                {cells.map((cell, i) => <Cell key={i} functions={{cellToClue, cellToWords, fillCell, checkCells}} cell={cell}/>)}
+                {cells.map((cell, i) => <Cell key={`${i}`} functions={{cellToClue, cellToWords, fillCell, checkCells}} cell={cell}/>)}
             </div>
 
             {clues.length > 0 ?

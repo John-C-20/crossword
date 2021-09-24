@@ -8,9 +8,8 @@ export default function Cell(props) {
         y = _props$cell.y,
         solution = _props$cell.solution,
         number = _props$cell.number,
-        type = _props$cell.type;
-
-    var i = props.i;
+        type = _props$cell.type,
+        solved = _props$cell.solved;
     var _props$functions = props.functions,
         cellToClue = _props$functions.cellToClue,
         cellToWords = _props$functions.cellToWords,
@@ -35,11 +34,13 @@ export default function Cell(props) {
 
     return solution ? React.createElement(
         "div",
-        { className: "cell", id: x + "," + y + " " + i },
+        { className: "cell " + (solved ? "solved" : false), id: x + "," + y },
         React.createElement(
             "div",
             { className: "cell-number" },
-            number
+            number,
+            " ",
+            solved
         ),
         React.createElement("input", { className: "cell-letter", onChange: handleChange, value: text })
     ) : React.createElement("div", { className: "cell-black" });

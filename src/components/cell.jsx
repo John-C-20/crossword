@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 export default function Cell(props) {
-    const {x,y,solution, number, type} = props.cell
-    const i = props.i
+    const {x,y,solution, number, type,solved} = props.cell
     const {cellToClue, cellToWords, fillCell, checkCells} = props.functions
     const [text, setText] = useState("")
 
@@ -19,12 +18,11 @@ export default function Cell(props) {
 
     return(
             solution ? 
-            <div className="cell" id={`${x},${y} ${i}`}>
+            <div className={`cell ${solved ? "solved" : false}`}id={`${x},${y}`}>
                 <div className="cell-number">
-                    {number}
+                    {number} {solved}
                 </div>
                 <input className="cell-letter" onChange={handleChange} value={text}>
-                    {/* {solution} */}
                 </input>
             </div> :
             <div className="cell-black"></div>
