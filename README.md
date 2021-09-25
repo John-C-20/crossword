@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Crossword 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>As the name suggests, Crossword is a web application built using Reactjs. I received this project as a take-home assignment and decided to use it as an opportunity to practice and learn new technologies. </p>
 
-## Available Scripts
+Unlike my previous React applications which were built using class components, this was built primarily using functional components and React Hooks. 
 
-In the project directory, you can run:
+At first there was a little bit of a learning curve trying to figure out how to do things like ```componentDidMount()``` using ```useEffect()``` After adjusting, I quickly began to appreciate how much time I was able to save avoiding boilerplate code like
 
-### `npm start`
+```JavaScript
+import React from 'react';
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+class CoolComponent extends React.Component {
+      constructor(props) {
+           super(props)
+      }
+      
+      componentDidMount(){};
+      
+      render() {
+            return( <div> haha I'm a div </div> )
+      }
+  }
+ ``` 
+ 
+<p>I also parsed a local JSON for the first time, usually I only work with JSON that had been retrieved from an external API.</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Another really cool thing I learned how to do with this project was deploying a full React app to github pages using the [Github Pages](https://www.npmjs.com/package/gh-pages) dev dependency. This [guide](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f) was super helpful.
 
-### `npm test`
+<p>After a little more than a day of struggling, I was able to finish the MVPs and produce a deliverable that followed the wireframe provided. Ultimately, I had a ton of fun brushing up on old skills, learning new ones, and building a game from scratch.</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### [Check it out!](https://john-c-20.github.io/crossword)
